@@ -2,14 +2,13 @@
 import Layout from "../layouts/Layout.astro";
 import ProfileCard from "../components/ProfileCard.jsx";
 import ParticlesBackground from "../components/ParticlesBackground";
-import Particles from "react-tsparticles";
 ---
 
 <Layout title="Hans's Portfolio">
   <main>
     <ParticlesBackground client:load />
     <div class="grid place-items-center bg-zinc-900 h-screen">
-      <ProfileCard />
+      <ProfileCard client:load />
     </div>
   </main>
 </Layout>
