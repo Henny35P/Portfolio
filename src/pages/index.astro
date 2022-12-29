@@ -6,9 +6,9 @@ import ParticlesBackground from "../components/ParticlesBackground";
 
 <Layout title="Hans's Portfolio">
   <main>
-    <ParticlesBackground client:load />
+    <ParticlesBackground client:only="react" />
     <div class="grid place-items-center bg-zinc-900 h-screen">
-      <ProfileCard client:load />
+      <ProfileCard client:only="react" />
     </div>
   </main>
 </Layout>
