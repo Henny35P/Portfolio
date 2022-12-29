@@ -20,7 +20,7 @@ export default function ParticlesBackground() {
     []
   );
   return (
-    <div className="fixed">
+    <div className="absolute">
       <Particles
         id="tsparticles"
         init={particlesInit}

@@ -69,8 +69,8 @@ const descriptionDiv = () => {
 export default function ProfileCard(): JSX.Element {
   const mobile = isMobile();
   return (
-    <div className="bg-zinc-800 h-5/6 w-5/6 md:w-4/6 rounded-xl grid grid-cols-1 md:grid-cols-2 text-white backdrop-blur-lg bg-opacity-50 overflow-auto">
-      <div className="grid grid-rows-3 place-items-center">
+    <div className="bg-zinc-800 h-5/6 w-5/6 md:w-4/6 rounded-xl grid grid-cols-1 md:grid-cols-3 text-white backdrop-blur-md bg-opacity-30 overflow-auto">
+      <div className="grid grid-rows-3 place-items-center col-span-2">
         {!mobile ? (
           <div>
             {" "}
