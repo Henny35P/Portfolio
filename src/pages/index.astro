@@ -6,7 +6,7 @@ import ParticlesBackground from "../components/ParticlesBackground";
 
 <Layout title="Hans's Portfolio">
   <main>
-    <div class="grid place-items-center bg-zinc-900 h-screen">
+    <div class="grid place-items-center bg-zinc-900 h-screen bg-zinc-900">
       <ParticlesBackground client:only="react" />
       <ProfileCard client:only="react" />
     </div>
@@ -14,11 +14,9 @@ import ParticlesBackground from "../components/ParticlesBackground";
 </Layout>
 
 <style>
-  /* main { */
-  /*   margin: auto; */
-  /*   padding: 1.5rem; */
-  /*   max-width: 60ch; */
-  /* } */
+  main {
+    background-color: rgb(24, 24, 27);
+  }
   h1 {
     font-size: 3rem;
     font-weight: 800;
