@@ -5,8 +5,9 @@ import { useEffect, useState } from "react";
 const privateInfo = {
   name: "Hans Villarroel",
   description:
-    "Hola, soy Hans, un estudiante actualmente cursando Ingenieria " +
-    "ejecucion en la Universidad de Santiago de Chile",
+    "Hola, soy Hans! \n" +
+    "Actualmente soy un estudiante cursando Ingenieria en  \
+    ejecucion informatica en la Universidad de Santiago de Chile",
 };
 
 function isMobile(): boolean {
@@ -46,7 +47,7 @@ function isMobile(): boolean {
 
 const nameDiv = () => {
   return (
-    <h1 className="text-2xl md:text-5xl font-mono font-medium underline decoration-1 underline-offset-8 text-center py-4">
+    <h1 className="text-2xl md:text-5xl font-mono font-medium underline decoration-1 underline-offset-8 text-center py-2">
       {privateInfo.name}
     </h1>
   );
@@ -55,7 +56,9 @@ const nameDiv = () => {
 const descriptionDiv = () => {
   return (
     <div>
-      <p className="text-justify px-4 ">{privateInfo.description} </p>
+      <p className="text-center px-8 whitespace-pre-line text-xl md:text-2xl">
+        {privateInfo.description}{" "}
+      </p>
     </div>
   );
 };
@@ -69,7 +72,7 @@ const descriptionDiv = () => {
 export default function ProfileCard(): JSX.Element {
   const mobile = isMobile();
   return (
-    <div className="bg-zinc-800 h-5/6 w-5/6 md:w-4/6 rounded-xl grid grid-cols-1 md:grid-cols-3 text-white backdrop-blur-md bg-opacity-30 overflow-auto">
+    <div className="bg-zinc-800 h-5/6 w-5/6 md:w-4/6 rounded-xl grid grid-cols-1 md:grid-cols-3 text-white backdrop-blur-md bg-opacity-30 overflow-hidden">
       <div className="grid grid-rows-3 place-items-center col-span-2">
         {!mobile ? (
           <div>
@@ -78,9 +81,9 @@ export default function ProfileCard(): JSX.Element {
           </div>
         ) : null}
       </div>
-      <div className="grid grid-rows-6 place-items-center py-8">
+      <div className="grid grid-rows-6 place-items-center ">
         <img
-          className="h-auto max-h-36 md:max-h-48 lg:max-h-64 rounded-full md:row-span-3 "
+          className="h-auto max-h-36 md:max-h-48  rounded-full md:row-span-3 "
           src="https://avatars.githubusercontent.com/u/59944004?v=4"
         />
         {mobile ? (
@@ -90,6 +93,13 @@ export default function ProfileCard(): JSX.Element {
             <div> {descriptionDiv()} </div>
           </div>
         ) : null}
+        <div className="flex justify-center gap-10 ">
+          <FontAwesomeIcon className=" h-6 md:h-16" icon={faGithub} />
+          <FontAwesomeIcon
+            className=" h-6 md: md:h-16"
+            icon={faLinkedin}
+          />{" "}
+        </div>
       </div>
     </div>
   );
