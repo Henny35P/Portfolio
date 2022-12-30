@@ -20,17 +20,13 @@ export default function ParticlesBackground() {
     []
   );
   return (
-    <div className="absolute">
+    <div className="absolute -z-10 ">
       <Particles
         id="tsparticles"
         init={particlesInit}
         loaded={particlesLoaded}
         options={{
-          background: {
-            color: {
-              value: "bg-zinc-900",
-            },
-          },
+          // background: {},
           fpsLimit: 120,
           interactivity: {
             events: {

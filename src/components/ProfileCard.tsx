@@ -72,7 +72,7 @@ const descriptionDiv = () => {
 export default function ProfileCard(): JSX.Element {
   const mobile = isMobile();
   return (
-    <div className="bg-zinc-800 h-5/6 w-5/6 md:w-4/6 rounded-xl grid grid-cols-1 md:grid-cols-3 text-white backdrop-blur-md bg-opacity-30 overflow-hidden">
+    <div className="bg-zinc-800 h-5/6 w-5/6 md:w-4/6 rounded-xl grid grid-cols-1 md:grid-cols-3 text-white backdrop-blur-md bg-opacity-30 overflow-hidden shadow-black shadow-2xl">
       <div className="grid grid-rows-3 place-items-center col-span-2">
         {!mobile ? (
           <div>
@@ -83,7 +83,7 @@ export default function ProfileCard(): JSX.Element {
       </div>
       <div className="grid grid-rows-6 place-items-center ">
         <img
-          className="h-auto max-h-36 md:max-h-48  rounded-full md:row-span-3 "
+          className="h-auto max-h-36 md:max-h-48  rounded-full md:row-span-2 "
           src="https://avatars.githubusercontent.com/u/59944004?v=4"
         />
         {mobile ? (
