@@ -72,33 +72,35 @@ const descriptionDiv = () => {
 export default function ProfileCard(): JSX.Element {
   const mobile = isMobile();
   return (
-    <div className="bg-zinc-800 h-5/6 w-5/6 md:w-4/6 rounded-xl grid grid-cols-1 md:grid-cols-3 text-white backdrop-blur-md bg-opacity-30 overflow-hidden shadow-black shadow-2xl">
-      <div className="grid grid-rows-3 place-items-center col-span-2">
-        {!mobile ? (
-          <div>
-            {" "}
-            <div>{nameDiv()}</div> <div> {descriptionDiv()} </div>{" "}
+    <div className="grid place-items-center h-screen">
+      <div className="bg-zinc-800 h-5/6 w-5/6 md:w-4/6 rounded-xl grid grid-cols-1 md:grid-cols-3 text-white backdrop-blur-md bg-opacity-30 overflow-hidden shadow-black shadow-2xl">
+        <div className="grid grid-rows-3 place-items-center col-span-2">
+          {!mobile ? (
+            <div>
+              {" "}
+              <div>{nameDiv()}</div> <div> {descriptionDiv()} </div>{" "}
+            </div>
+          ) : null}
+        </div>
+        <div className="grid grid-rows-6 place-items-center ">
+          <img
+            className="h-auto max-h-36 md:max-h-48  rounded-full md:row-span-2 "
+            src="https://avatars.githubusercontent.com/u/59944004?v=4"
+          />
+          {mobile ? (
+            <div>
+              {" "}
+              <div>{nameDiv()}</div>
+              <div> {descriptionDiv()} </div>
+            </div>
+          ) : null}
+          <div className="flex justify-center gap-10 ">
+            <FontAwesomeIcon className=" h-6 md:h-16" icon={faGithub} />
+            <FontAwesomeIcon
+              className=" h-6 md: md:h-16"
+              icon={faLinkedin}
+            />{" "}
           </div>
-        ) : null}
-      </div>
-      <div className="grid grid-rows-6 place-items-center ">
-        <img
-          className="h-auto max-h-36 md:max-h-48  rounded-full md:row-span-2 "
-          src="https://avatars.githubusercontent.com/u/59944004?v=4"
-        />
-        {mobile ? (
-          <div>
-            {" "}
-            <div>{nameDiv()}</div>
-            <div> {descriptionDiv()} </div>
-          </div>
-        ) : null}
-        <div className="flex justify-center gap-10 ">
-          <FontAwesomeIcon className=" h-6 md:h-16" icon={faGithub} />
-          <FontAwesomeIcon
-            className=" h-6 md: md:h-16"
-            icon={faLinkedin}
-          />{" "}
         </div>
       </div>
     </div>
