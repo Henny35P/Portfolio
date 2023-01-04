@@ -14,7 +14,7 @@ export default function ProjectCard(props: ProjectProps) {
       <img src={props.img} className="rounded-xl object-cover" />
       <div className="grid grid-cols-1 place-items-center mx-4 ">
         <div>
-          <h1 className="text-zinc-50 text-xl underline underline-offset-2">
+          <h1 className="text-zinc-50 text-xl underline underline-offset-2 py-2">
             {" "}
             {props.name}{" "}
           </h1>

@@ -11,10 +11,8 @@ import HorizontalSpacer from "../components/HorizontalSpacer";
     <ParticlesBackground client:only="react" />
     <div>
       <ProfileCard client:only="react" />
-      <HorizontalSpacer>
-        <p slot="name">Proyectos</p>
-      </HorizontalSpacer>
-      <ProjectsList />
+      <HorizontalSpacer name="Proyectos" />
+      <ProjectsList client:visible />
     </div>
   </main>
 
