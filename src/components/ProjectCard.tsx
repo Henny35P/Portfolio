@@ -5,7 +5,8 @@ export interface ProjectProps {
   name: string;
   description: string;
   img: string;
-  url: string;
+  url?: string;
+  repo: string;
 }
 
 export default function ProjectCard(props: ProjectProps) {
@@ -14,16 +15,20 @@ export default function ProjectCard(props: ProjectProps) {
       <img src={props.img} className="rounded-xl object-cover" />
       <div className="grid grid-cols-1 place-items-center mx-4 ">
         <div>
-          <h1 className="text-zinc-50 text-xl underline underline-offset-2 py-2">
-            {" "}
-            {props.name}{" "}
-          </h1>
+          <a href={props.url || undefined}>
+            <h1 className="text-zinc-50 text-xl underline underline-offset-2 py-2">
+              {" "}
+              {props.name}{" "}
+            </h1>
+          </a>
         </div>
         <div>
           <p className="text-zinc-200 break-words"> {props.description}</p>
         </div>
-        <div>
-          <FontAwesomeIcon className="h-6 md:h-12" icon={faGithub} />
+        <div className="mt-4">
+          <a href={props.repo}>
+            <FontAwesomeIcon className="h-6 md:h-12" icon={faGithub} />
+          </a>
         </div>
       </div>
     </div>

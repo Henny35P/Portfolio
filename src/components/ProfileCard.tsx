@@ -5,9 +5,13 @@ import { faClipboard } from "@fortawesome/free-regular-svg-icons";
 
 const privateInfo = {
   name: "Hans Villarroel",
-  description: `Hola, soy Hans y soy un desarrollador web fullstack.     
-  Actualmente soy un estudiante cursando Ingenieria de ejecucion en computacion e informatica en la Universidad de Santiago de Chile.
-  Me enfoco principalemente en desarrollo web usando diferentes tecnologias como React, Next, NodeJS y otros.`,
+  description: `Hola, soy Hans, un desarrollador web fullstack. Actualmente, estoy cursando Ingeniería de Ejecución en Computación e Informática en la Universidad de Santiago de Chile.
+
+Desde que comencé mi carrera en el desarrollo web, me he especializado en el uso de diferentes tecnologías, como React, Next y NodeJS, entre otras.
+
+He trabajado en varios proyectos de desarrollo web, desde páginas estáticas con HTML y CSS hasta aplicaciones web con diferentes stacks de lenguajes.
+
+En los iconos inferiores, puedes encontrar enlaces a mi CV, GitHub y LinkedIn. Además, más abajo, encontrarás algunos de los proyectos que he realizado, junto con sus repositorios y sitios donde se pueden probar.`,
   github: "github.com/Henny35P",
   linkedin: "linkedin.com/in/hansvillarroel",
   curriculum: "",
@@ -15,7 +19,7 @@ const privateInfo = {
 
 const nameDiv = () => {
   return (
-    <h1 className="text-2xl md:text-5xl font-mono font-medium underline decoration-3 underline-offset-8 text-center py-2 md:py-8 lg:py-12">
+    <h1 className="text-2xl md:text-5xl font-mono font-medium underline decoration-3 underline-offset-8 text-center py-2 md:py-8 lg:py-12 ">
       {privateInfo.name}
     </h1>
   );
@@ -24,7 +28,7 @@ const nameDiv = () => {
 const descriptionDiv = () => {
   return (
     <div>
-      <p className="px-8 whitespace-pre-line text-xl md:text-2xl">
+      <p className="px-8 whitespace-pre-line text-xl xl:text-2xl ">
         {privateInfo.description}{" "}
       </p>
     </div>
@@ -35,17 +39,17 @@ const infoDiv = () => {
   return (
     <div className="flex justify-center gap-10 py-6 ">
       <FontAwesomeIcon
-        className=" h-6 md:h-16 cursor-pointer"
+        className=" h-10 md:h-16 cursor-pointer"
         icon={faClipboard}
         onClick={() => handleClick(`https://${privateInfo.curriculum}`)}
       />
       <FontAwesomeIcon
-        className=" h-6 md:h-16 cursor-pointer"
+        className=" h-10 md:h-16 cursor-pointer"
         icon={faGithub}
         onClick={() => handleClick(`https://${privateInfo.github}`)}
       />
       <FontAwesomeIcon
-        className=" h-6 md: md:h-16 cursor-pointer"
+        className=" h-10 md: md:h-16 cursor-pointer"
         icon={faLinkedin}
         onClick={() => handleClick(`https://${privateInfo.linkedin}`)}
       />{" "}
@@ -100,19 +104,19 @@ function isMobile(): boolean {
 export default function ProfileCard(): JSX.Element {
   const mobile = isMobile();
   return (
-    <div className="grid place-items-center h-screen">
-      <div className="bg-zinc-800 md:h-5/6 w-5/6 md:w-4/6 rounded-xl grid grid-cols-1 md:grid-cols-3 text-white backdrop-blur-md bg-opacity-30 shadow-black shadow-2xl ">
+    <div className="flex justify-center items-center h-screen">
+      <div className="bg-zinc-800 xl:h-5/6 w-5/6 rounded-xl grid grid-cols-1 md:grid-cols-3 text-white backdrop-blur-md bg-opacity-30 shadow-black shadow-2xl ">
         {/* render para desktops */}
-        <div className="grid grid-rows-3 place-items-center col-span-2">
+        <div className="flex flex-row  col-span-2">
           {!mobile ? (
-            <div className="md:row-span-2 md:px-0 lg:px-12">
+            <div className=" md:px-0 lg:px-12">
               {" "}
               <div>{nameDiv()}</div> <div> {descriptionDiv()} </div> {infoDiv()}
             </div>
           ) : null}
         </div>
         <img
-          className="object-scale-down my-16 -mx-8 rounded-md shadow-black shadow-2xl"
+          className="object-scale-down my-16 mx-16 rounded-md shadow-black shadow-2xl xl:h-5/6"
           src="/lonmgtest.jpg"
         />{" "}
         {/* render para mobile */}
