@@ -1,7 +1,9 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { faClipboard } from "@fortawesome/free-regular-svg-icons";
+import { useInView } from "framer-motion";
+import { motion } from "framer-motion";
 
 const privateInfo = {
 	name: "Hans Villarroel",
@@ -118,7 +120,7 @@ export default function ProfileCard(): JSX.Element {
 				<img
 					className="object-scale-down m-auto md:-mx-6 rounded-md xl:h-5/6 drop-shadow-lg"
 					src="/lonmgtest.jpg"
-				/>{" "}
+				/>
 				{/* render para mobile */}
 				{mobile ? (
 					<div>

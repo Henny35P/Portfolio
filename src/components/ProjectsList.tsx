@@ -1,12 +1,14 @@
+import { useRef } from "react";
 import ProjectCard, { type ProjectProps } from "../components/ProjectCard";
+import { AnimatePresence, motion, useInView } from "framer-motion";
 
 const Projects: ProjectProps[] = [
 	{
 		name: "SED USACH",
 		description:
-			'"Sistema de evaluacion docente", un programa Fullstack de fines educativos desarrollado\
-      con Spring, Vue y Nuxt. El usuario puede dejar constancia de sus avances en el sistema para despues \
-      ser visualizado y evaluado por las autoridades academicas.',
+			"SED es un programa Fullstack de fines educativos desarrollado\
+      con Spring y Nuxt. El usuario puede dejar constancia de sus avances en el sistema para despues \
+      ser visualizado y evaluado por las autoridades academicas.",
 		img: "/SEDlogin.png",
 		url: "",
 		repo: "https://github.com/Henny35P/grupo3_frontend",
@@ -53,9 +55,20 @@ export default function ProjectsList() {
 			/>
 		);
 	});
+	const ref = useRef(null);
+	const isInView = useInView(ref, { once: true });
+
 	return (
-		<div className="h-screen grid grid-cols-1 md:grid-cols-2 place-items-center mx-auto gap-10 w-5/6 md:w-8/12">
-			{projects}
+		<div ref={ref}>
+			{isInView && (
+				<motion.div
+					initial={{ opacity: 0, scale: 0.5 }}
+					animate={{ opacity: 1, scale: 1 }}
+					transition={{ duration: 0.6 }}
+					className="h-screen grid grid-cols-1 md:grid-cols-2 place-items-center mx-auto gap-10 w-5/6 md:w-8/12">
+					{projects}
+				</motion.div>
+			)}
 		</div>
 	);
 }

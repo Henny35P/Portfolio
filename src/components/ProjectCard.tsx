@@ -32,7 +32,7 @@ export default function ProjectCard(props: ProjectProps) {
 				</div>
 				<div className="mt-4">
 					<a href={props.repo}>
-						<FontAwesomeIcon className="h-6 md:h-12" icon={faGithub} />
+						<FontAwesomeIcon className="h-6 md:h-10" icon={faGithub} />
 					</a>
 				</div>
 			</div>
