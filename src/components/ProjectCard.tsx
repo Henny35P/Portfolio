@@ -15,7 +15,7 @@ export default function ProjectCard(props: ProjectProps) {
 			<div>
 				<img
 					src={props.img}
-					className="rounded-xl object-contain w-full h-52 "
+					className="rounded-xl object-contain w-full h-52 xl:h-96 "
 				/>
 			</div>
 			<div className="grid grid-cols-1 place-items-center mx-4">
